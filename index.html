@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario Mi amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fce4ec; /* Rosa suave */
+            color: #880e4f;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .heart { color: #e91e63; font-size: 50px; animation: latido 1s infinite; }
+        
+        /* El Contador */
+        #contador {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+        .time-box {
+            background: #e91e63;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 70px;
+        }
+        .time-box span { display: block; font-size: 1.5em; }
+        .label { font-size: 0.8em; font-weight: normal; }
+
+        /* Fotos */
+        .photo-frame {
+            border: 5px solid #f8bbd0;
+            padding: 5px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        img { width: 100%; border-radius: 5px; }
+
+        /* Carta */
+        .carta {
+            text-align: left;
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 5px solid #ff9800;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>¡Felices 2 Años, Katia!</h1>
+        <p>Porque cada segundo contigo cuenta (literalmente).</p>
+
+        <div id="contador">
+            <div class="time-box"><span id="dias">0</span><div class="label">Días</div></div>
+            <div class="time-box"><span id="horas">0</span><div class="label">Horas</div></div>
+            <div class="time-box"><span id="minutos">0</span><div class="label">Min</div></div>
+            <div class="time-box"><span id="segundos">0</span><div class="label">Seg</div></div>
+        </div>
+
+        <div class="photo-frame">
+            <img src="foto1.jpg" alt="Nosotros" onerror="this.style.display='none'">
+            <p><i>Eres mi persona favorita en el mundo.</i></p>
+        </div>
+
+        <div class="carta">
+            <h3>Para Katia:</h3>
+            <p>Estos dos años han sido una aventura increíble. No tengo todas las riquezas del mundo, pero tengo la suerte de tenerte a mi lado.</p>
+            <p>Gracias por apoyarme en mis proyectos, por la paciencia y por el amor.</p>
+            <p><b>Te amo, <br>Rodrigo.</b></p>
+        </div>
+    </div>
+
+    <script>
+        // FECHA DE INICIO: 10 de Febrero 2024 (Hace 2 años desde mañana)
+        const fechaInicio = new Date("February 10, 2024 00:00:00").getTime();
+
+        function actualizarContador() {
+            const ahora = new Date().getTime();
+            const diferencia = ahora - fechaInicio;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias;
+            document.getElementById("horas").innerText = horas;
+            document.getElementById("minutos").innerText = minutos;
+            document.getElementById("segundos").innerText = segundos;
+        }
+
+        setInterval(actualizarContador, 1000);
+        actualizarContador();
+    </script>
+</body>
+</html>
