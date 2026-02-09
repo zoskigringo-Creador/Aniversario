@@ -3,119 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Aniversario Mi amor</title>
+    <title>Felices 2 Años Katia</title>
+    <!-- Fuentes Elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #d88995; /* Rosa viejo elegante */
+            --accent: #b08d55; /* Dorado mate */
+            --bg: #fff9fa;
+            --text: #5a4a4e;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fce4ec; /* Rosa suave */
-            color: #880e4f;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            padding: 20px;
+            overflow-x: hidden;
+            text-align: center;
         }
+
+        /* --- Fondo Decorativo --- */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at top right, #ffecf0 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, #fff0e6 0%, transparent 40%);
+        }
+
+        /* --- Animación de Corazones Flotantes (Confeti suave) --- */
+        .heart-fall {
+            position: fixed;
+            top: -10%;
+            color: var(--primary);
+            opacity: 0.6;
+            z-index: 0;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- Contenedor Principal --- */
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
         }
-        h1 { font-size: 2.5em; margin-bottom: 10px; }
-        .heart { color: #e91e63; font-size: 50px; animation: latido 1s infinite; }
-        
-        /* El Contador */
-        #contador {
+
+        /* --- Encabezado --- */
+        header {
+            margin-bottom: 60px;
+            animation: fadeIn 2s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--text);
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        h1 span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- Contador Elegante --- */
+        .counter-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(216, 137, 149, 0.15);
+            margin-bottom: 60px;
+        }
+
+        .counter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .timer {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            font-weight: bold;
+            gap: 20px;
+            flex-wrap: wrap;
         }
+
         .time-box {
-            background: #e91e63;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            min-width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .time-box span { display: block; font-size: 1.5em; }
-        .label { font-size: 0.8em; font-weight: normal; }
 
-        /* Fotos */
-        .photo-frame {
-            border: 5px solid #f8bbd0;
-            padding: 5px;
+        .time-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* --- Carta de Amor (Sin Código) --- */
+        .love-letter {
+            position: relative;
+            background: var(--white);
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(176, 141, 85, 0.2); /* Borde dorado sutil */
+        }
+        
+        /* Efecto de papel */
+        .love-letter::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px solid rgba(176, 141, 85, 0.5);
+        }
+
+        .love-letter p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .love-letter h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            text-align: right;
+            color: var(--accent);
+            margin-top: 30px;
+        }
+
+        /* --- Cuponera Visual --- */
+        .coupons-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
+
+        .coupons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .ticket {
+            background: var(--white);
             border-radius: 10px;
-            margin: 20px 0;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-left: 5px solid var(--primary);
+            position: relative;
         }
-        img { width: 100%; border-radius: 5px; }
 
-        /* Carta */
-        .carta {
+        .ticket:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(216, 137, 149, 0.25);
+        }
+
+        .ticket-content {
+            padding: 25px;
             text-align: left;
-            background: #fff3e0;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-            border-left: 5px solid #ff9800;
         }
 
-        @keyframes latido {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        .ticket-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ticket h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 0 0 10px 0;
+            color: var(--text);
+            font-size: 1.3rem;
+        }
+
+        .ticket p {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .ticket-action {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Estado Canjeado */
+        .ticket.redeemed {
+            opacity: 0.6;
+            filter: grayscale(1);
+            pointer-events: none;
+        }
+        .ticket.redeemed .ticket-action {
+            color: #333;
+            text-decoration: line-through;
+        }
+
+        /* --- Footer Divertido --- */
+        .footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .funny-note {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* --- Animaciones Generales --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .love-letter { padding: 30px 20px; }
+            .timer { gap: 15px; }
+            .time-number { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-decoration"></div>
+    <!-- Contenedor de Lluvia de Amor -->
+    <div id="hearts-container"></div>
+
     <div class="container">
-        <div class="heart">❤️</div>
-        <h1>¡Felices 2 Años, Mi amor ❤️</h1>
-        <p>Porque cada segundo contigo cuenta (literalmente).</p>
+        
+        <header>
+            <span class="subtitle">10 de Febrero 2026</span>
+            <h1>Rodrigo <span>&</span> Katia</h1>
+            <p style="font-size: 1.2rem; color: #888;">Celebrando nuestra historia</p>
+        </header>
 
-        <div id="contador">
-            <div class="time-box"><span id="dias">0</span><div class="label">Días</div></div>
-            <div class="time-box"><span id="horas">0</span><div class="label">Horas</div></div>
-            <div class="time-box"><span id="minutos">0</span><div class="label">Min</div></div>
-            <div class="time-box"><span id="segundos">0</span><div class="label">Seg</div></div>
+        <!-- SECCIÓN 1: TIEMPO JUNTOS -->
+        <section class="counter-section">
+            <h2 class="counter-title">Cada segundo a tu lado cuenta</h2>
+            <div class="timer" id="timer">
+                <div class="time-box">
+                    <span class="time-number" id="dias">0</span>
+                    <span class="time-label">Días</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-number" id="horas">0</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-number" id="minutos">0</span>
+                    <span class="time-label">Mins</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-number" id="segundos">0</span>
+                    <span class="time-label">Segs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: CARTA (Sin Código) -->
+        <section class="love-letter">
+            <h2>Para el amor de mi vida</h2>
+            <p>
+                A veces busco las palabras perfectas para decirte cuánto significas para mí, pero creo que la mejor forma de demostrarlo es simplemente estando a tu lado.
+            </p>
+            <p>
+                Estos dos años han sido un viaje increíble. No ha sido perfecto, pero ha sido <b>nuestro</b>. Gracias por ser mi compañera, mi mejor amiga y mi paz en medio del caos.
+            </p>
+            <p>
+                No tengo fortunas para darte hoy, pero te doy mi tiempo, mi paciencia (casi toda, jaja) y mi corazón completo.
+            </p>
+            <div class="signature">
+                Con amor, Rodrigo.
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CUPONERA DE REGALOS -->
+        <h2 class="coupons-title">Mis Regalos para Ti 🎁</h2>
+        <p style="margin-bottom: 30px; color: #888;">Toca un ticket para canjearlo</p>
+
+        <div class="coupons-grid">
+            <!-- Cupón 1: Romántico -->
+            <div class="ticket" onclick="canjear(this)">
+                <div class="ticket-content">
+                    <span class="ticket-icon">🥂</span>
+                    <h3>Cena Romántica</h3>
+                    <p>Una cena hecha por mí (o tu comida favorita a domicilio). Sin celulares, solo nosotros.</p>
+                    <span class="ticket-action">Hacer clic para canjear</span>
+                </div>
+            </div>
+
+            <!-- Cupón 2: Relajación -->
+            <div class="ticket" onclick="canjear(this)">
+                <div class="ticket-content">
+                    <span class="ticket-icon">💆‍♀️</span>
+                    <h3>Sesión de Spa Casero</h3>
+                    <p>Masaje de espalda de 30 minutos garantizado. Incluye música relajante y cero quejas.</p>
+                    <span class="ticket-action">Hacer clic para canjear</span>
+                </div>
+            </div>
+
+            <!-- Cupón 3: Gracioso/Poder -->
+            <div class="ticket" onclick="canjear(this)">
+                <div class="ticket-content">
+                    <span class="ticket-icon">👑</span>
+                    <h3>Tener la Razón</h3>
+                    <p>Vale dorado para ganar cualquier discusión automáticamente. Úsalo sabiamente.</p>
+                    <span class="ticket-action">Hacer clic para canjear</span>
+                </div>
+            </div>
+
+            <!-- Cupón 4: Hot/Picante (Sutil) -->
+            <div class="ticket" onclick="canjear(this)">
+                <div class="ticket-content">
+                    <span class="ticket-icon">🔥</span>
+                    <h3>Deseo de Medianoche</h3>
+                    <p>Válido por un momento íntimo donde tú pones las reglas. <br><i>(Nota: No se aceptan devoluciones)</i></p>
+                    <span class="ticket-action">Hacer clic para canjear</span>
+                </div>
+            </div>
         </div>
 
-        <div class="photo-frame">
-            <img src="foto1.jpg" alt="Nosotros" onerror="this.style.display='none'">
-            <p><i>Eres mi persona favorita en el mundo.</i></p>
+        <!-- FOOTER -->
+        <div class="footer">
+            <p class="funny-note">"La oferta es hasta mañana mi amor jajaj ❤️"</p>
+            <p>Feliz Aniversario, Katia.</p>
         </div>
 
-        <div class="carta">
-            <h3>Para Katia:</h3>
-            <p>Estos dos años han sido una aventura increíble. No tengo todas las riquezas del mundo, pero tengo la suerte de tenerte a mi lado.</p>
-            <p>Gracias por apoyarme en mis proyectos, por la paciencia y por el amor que siempre me tuviste y me seguis teniendo, el apoyo que siempre me brindas y la paz que me das es todo lo que siempre busque en esta vida.</p>
-            <p><b>Te amo muchisimo. <br>Rodrigo Cabrera.</b></p>
-        </div>
     </div>
 
     <script>
-        // FECHA DE INICIO: 10 de Febrero 2024 (Hace 2 años desde mañana)
-        const fechaInicio = new Date("February 10, 2024 00:00:00").getTime();
+        // --- 1. CONTADOR DE TIEMPO ---
+        // Fecha de inicio: 10 de Febrero 2024
+        const startDate = new Date("February 10, 2024 00:00:00").getTime();
 
-        function actualizarContador() {
-            const ahora = new Date().getTime();
-            const diferencia = ahora - fechaInicio;
+        function updateTimer() {
+            const now = new Date().getTime();
+            const difference = now - startDate;
 
-            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            document.getElementById("dias").innerText = dias;
-            document.getElementById("horas").innerText = horas;
-            document.getElementById("minutos").innerText = minutos;
-            document.getElementById("segundos").innerText = segundos;
+            document.getElementById("dias").innerText = days;
+            document.getElementById("horas").innerText = hours;
+            document.getElementById("minutos").innerText = minutes;
+            document.getElementById("segundos").innerText = seconds;
         }
 
-        setInterval(actualizarContador, 1000);
-        actualizarContador();
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // --- 2. LLUVIA DE CORAZONES ---
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const symbols = ['❤️', '✨', '💖', '🌸']; // Corazones y flores
+
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-fall');
+                heart.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+
+        // --- 3. INTERACCIÓN DE TICKETS ---
+        function canjear(ticket) {
+            if (!ticket.classList.contains('redeemed')) {
+                ticket.classList.add('redeemed');
+                const actionText = ticket.querySelector('.ticket-action');
+                actionText.innerText = "¡CANJEADO! ✅";
+                actionText.style.color = "#2ecc71"; // Verde éxito
+                
+                // Pequeña vibración en el móvil si es compatible
+                if (navigator.vibrate) navigator.vibrate(50);
+            }
+        }
     </script>
 </body>
 </html>
